@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalhes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-card>
+    <!--<img src="http://mambo.vteximg.com.br/arquivos/seo-cerveja.png" width="100" height="230"/> 
+    <img src="/assets/countries/32/br-d42978c8a395f19b0504bbebd06d7311.png" /> 
+    https://cosmos.bluesoft.io/assets/product-placeholder-55580b779c0ed40855059c6a9634108e.png
+         src="https://cdn-cosmos.bluesoft.com.br/products/7891000100103"
+    <img src="https://cdn-cosmos.bluesoft.com.br/products/7896045523412" width="50" height="270" />-->
+    <!--7894321711478
+    7896045523412 -->
+      <ion-thumbnail item-start *ngIf="urlapi">
+        <img src="{{urlapi}}" width="50" height="270" />
+      </ion-thumbnail>
+
+    <ion-card-content>
+   
+     <ion-list *ngFor="let d of prod">
+       
+            <ion-card-title>
+                <h1 text-wrap>{{ d.name }} </h1>
+            </ion-card-title>
+            <p>
+                EAN: <strong> {{ d.ean }} </strong>
+            </p>  
+            <p>
+                Fornecedor: <strong> {{ d.fornecedor }} </strong> 
+            </p>
+            <p>
+                Preço: <strong> {{ d.price | currency : 'BRL' }} </strong>
+            </p>
+             <p>
+                Estoque: <strong> {{ d.estoque }} </strong>
+            </p>
+            <p>
+                Vda Mês: <strong> {{ d.vendas_mes }} </strong> / # Dias Vda: <strong> {{ d.qtde_dias }} </strong>
+            </p>
+            <p>
+                VMéd Dia: <strong> {{ result1 }} </strong> / # Dias Estq: <strong> {{ result2 }} </strong>
+            </p>
+            <p>
+                Data Cadastro: <strong> {{ d.data_cad | date: 'dd/MM/yyyy'}} </strong>
+            </p>
+        
+     </ion-list>  
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+

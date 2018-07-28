@@ -1,0 +1,60 @@
+<ion-header>
+  
+  <ion-navbar transparent>
+    <ion-title>
+      Produtos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addReview()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+   </ion-navbar>
+  
+  <!--<ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Produtos</ion-title>
+  </ion-navbar> --> 
+
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list>
+  
+    <ion-item-sliding *ngFor="let review of prod">
+ 
+      <ion-item>
+ 
+        <h2>{{review.name}}</h2>
+        <p>{{review.fornecedor}}</p>
+ 
+        <ion-icon *ngIf="review.rating < 50" color="danger" name="sad"></ion-icon>
+        <ion-icon *ngIf="review.rating >= 50" color="secondary" name="happy"></ion-icon>
+        {{review.rating}}
+ 
+      </ion-item>
+ 
+      <ion-item-options side='left'>
+        <button ion-button color="secundary" (click)="getProdId(review)">
+          <ion-icon name="paper"></ion-icon>
+            det
+        </button>
+        <button ion-button color="danger" (click)="deleteReview(review)">
+          <ion-icon name="trash"></ion-icon>
+            exc
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+  
+  
+  <!--<ion-list>
+    <button ion-item *ngFor="let b of prod" (click)="getBeerInfo(b._id)" >
+      <h1>{{ b.name }}</h1>
+      <p>{{ b.fornecedor }}</p>
+    </button>  
+  </ion-list> -->  
+  
+</ion-content>

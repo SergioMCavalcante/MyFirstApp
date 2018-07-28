@@ -1,0 +1,65 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastrar</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar transparent>
+   <ion-title>Cadastrar Produto</ion-title>
+   <ion-buttons end>
+     <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+   </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+<ion-content padding>
+  <ion-item>
+   <ion-label floating>Nome</ion-label>
+   <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Fornecedor</ion-label>
+    <ion-input type="text" [(ngModel)]="fornecedor"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>EAN</ion-label>
+    <ion-input type="text" [(ngModel)]="ean"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>Preço</ion-label>
+    <ion-input type="text" [(ngModel)]="price"></ion-input>
+   </ion-item>
+
+   <ion-item>
+    <ion-range min="0" max="100" pin="true" [(ngModel)]="rating">
+      <ion-icon range-left color="danger" name="sad"></ion-icon>
+      <ion-icon range-right color="secondary" name="happy"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <button ion-button full color="secondary" (click)="save()">Cadastrar</button>
+  <!-- <ion-item>
+    <ion-label floating>Tipo</ion-label>
+    <ion-input type="text" [(ngModel)]="beer.type"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>Marca</ion-label>
+    <ion-input type="text" [(ngModel)]="beer.mark"></ion-input>
+   </ion-item>
+   <ion-item>
+    <ion-label floating>EAN</ion-label>
+    <ion-input type="text" [(ngModel)]="beer.ean"></ion-input>
+   </ion-item>
+   <p>
+     <button color="danger" ion-button full (click)="getPhoto()">
+        <ion-icon name="camera"></ion-icon>
+        Tirar Foto</button>
+        <img src="{{beer.img}}" alt="" *ngIf="beer.img" width="100%" height="150px">
+   </p> 
+   <p>
+    <button ion-button full (click)="saveBeer(beer)">Cadastrar</button>
+   </p>-->
+</ion-content>
